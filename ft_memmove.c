@@ -6,7 +6,7 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 16:07:05 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/08 18:49:16 by slucas           ###   ########.fr       */
+/*   Updated: 2022/03/09 14:26:26 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,12 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	dst2 = (char *)dst;
 	src2 = (char *)src;
-	if (!dst || !src)
-		return (dst);
+	if (!dst && !src)
+		return (NULL);
 	if (dst > src)
 	{
-		dst2 += len - 1;
-		src2 += len - 1;
 		while (len--)
-			*dst2-- = *src2--;
+			dst2[len] = src2[len];
 	}
 	else
 	{
