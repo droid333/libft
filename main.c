@@ -6,7 +6,7 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:09:18 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/09 20:07:02 by slucas           ###   ########.fr       */
+/*   Updated: 2022/03/10 16:49:11 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -290,7 +290,7 @@ int	main(void)
 /**********
  * FT_MEMCMP *
  * *********/
-
+/*
 int	main(void)
 {
 	char	s1[] = "bonjour";
@@ -299,6 +299,76 @@ int	main(void)
 
 	printf("la vraie::: %d\n", memcmp(s1, s2, n));
 	printf("la mienne:: %d\n", ft_memcmp(s1, s2, n));
+	return (0);
+}
+*/
+
+/**********
+ * FT_STRNSTR *
+ * *********/
+/*
+int	main(void)
+{
+	char	hay[] = "bonjour";
+	char	nee[] = "";
+	size_t	n = 0;
+
+	printf("la vraie::: %s\n", strnstr(hay, nee, n));
+	printf("la mienne:: %s\n", ft_strnstr(hay, nee, n));
+	return (0);
+}
+*/
+
+/**********
+ * FT_ATOI *
+ * *********/
+/*
+int	main(void)
+{
+	char	str[] = "   -458hj6";
+
+	printf("la vraie::: %d\n", atoi(str));
+	printf("la mienne:: %d\n", ft_atoi(str));
+	return (0);
+}
+*/
+
+/**********
+ * FT_CALLOC *
+ * *********/
+/*
+int	main(void)
+{
+	// a tester en remplissant avec des 1 (ft_memset)
+	size_t	count = 5;
+	size_t	size = 4;
+
+	char	*test1 = calloc(count, size);
+	char	*test2 = ft_calloc(count, size);
+	
+	printf("la vraie::: %s\n", test1);
+	printf("la mienne:: %s\n", test2);
+
+	free(test1);
+	free(test2);
+	return (0);
+}
+*/
+
+/**********
+ * FT_STRDUP *
+ * *********/
+
+int	main(void)
+{
+	char	*s1 = strdup("lol");
+	char	*s2 = ft_strdup("lol");
+
+	printf("la vraie::: %s\n", s1);
+	printf("la mienne:: %s\n", s2);
+
+	free(s1);
+	free(s2);
 	return (0);
 }
 

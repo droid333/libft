@@ -6,7 +6,7 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:12:00 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/09 19:22:53 by slucas           ###   ########.fr       */
+/*   Updated: 2022/03/10 15:54:34 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,9 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+int		ft_atoi(const char *str);
+void	*ft_calloc(size_t count, size_t size);
+char	*ft_strdup(const char *s1);
 
 #endif
