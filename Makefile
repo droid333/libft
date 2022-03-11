@@ -6,7 +6,7 @@
 #    By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 18:02:58 by slucas            #+#    #+#              #
-#    Updated: 2022/03/11 18:53:52 by slucas           ###   ########.fr        #
+#    Updated: 2022/03/11 19:52:12 by slucas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,8 @@ OBJ		= $(SRC:.c=.o)
 
 CC		= gcc
 
+AR		= ar rcs
+
 RM		= rm -rf
 
 CFLAGS	= -Wall -Wextra -Werror
@@ -52,7 +54,7 @@ all: $(NAME)
 	$(CC) $(CFLAGS) -c -I. $< -o $@
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	$(AR) $@ $^
 
 clean:
 	$(RM) $(OBJ)
