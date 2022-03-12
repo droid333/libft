@@ -6,7 +6,7 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:09:18 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/10 16:49:11 by slucas           ###   ########.fr       */
+/*   Updated: 2022/03/13 00:22:45 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -358,7 +358,7 @@ int	main(void)
 /**********
  * FT_STRDUP *
  * *********/
-
+/*
 int	main(void)
 {
 	char	*s1 = strdup("lol");
@@ -369,6 +369,51 @@ int	main(void)
 
 	free(s1);
 	free(s2);
+	return (0);
+}
+*/
+
+/******************************************
+ ******************************************/
+
+/**********
+ * FT_SUBSTR *
+ * *********/
+/*
+int	main(void)
+{
+	char	*test = ft_substr("bonjour", 2, 5);
+
+	printf("%s\n", test);
+	free(test);
+	return (0);
+}
+*/
+
+/**********
+ * FT_STRJOIN *
+ * *********/
+/*
+int	main(void)
+{
+	char	*s = ft_strjoin("erty", "BNJFU");
+
+	printf("%s\n", s);
+	free(s);
+	return (0);
+}
+*/
+
+/**********
+ * FT_STRTRIM *
+ * *********/
+
+int	main(void)
+{
+	char	*str = ft_strtrim("12bonj12our12", "34");
+
+	printf("%s\n", str);
+	free(str);
 	return (0);
 }
 
