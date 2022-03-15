@@ -6,7 +6,7 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:09:18 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/13 00:22:45 by slucas           ###   ########.fr       */
+/*   Updated: 2022/03/15 20:31:07 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -407,13 +407,28 @@ int	main(void)
 /**********
  * FT_STRTRIM *
  * *********/
-
+/*
 int	main(void)
 {
-	char	*str = ft_strtrim("12bonj12our12", "34");
+	char	*str = ft_strtrim("12bon121", "1");
 
 	printf("%s\n", str);
 	free(str);
+	return (0);
+}
+*/
+
+/**********
+ * FT_SPLIT *
+ * *********/
+
+int	main(void)
+{
+	char	s[] = "bojonjour";
+	char	c = 'j';
+	char	**ptr = ft_split(s, c);
+
+	free(ptr);
 	return (0);
 }
 

@@ -6,54 +6,34 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 20:04:07 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/13 00:19:37 by slucas           ###   ########.fr       */
+/*   Updated: 2022/03/15 15:36:06 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count(char const *s1, char const *set)
+static int	ft_count(char const *s1, char const *set, int index)
 {
-	int	i;
 	int	j;
+	int	ref;
 	int	count;
 
-	i = 0;
 	j = 0;
+	ref = 1;
 	count = 0;
+	if (index)
+		ref = -ref;
 	while (set[j])
 	{
-		while (s1[i] == set[j])
+		while (s1[index] == set[j])
 		{
-			i++;
+			index += (1 * ref);
 			count++;
 			j = 0;
 		}
 		j++;
 	}
 	return (count);
-}
-
-static char	*ft_strrev(char const *s, int len)
-{
-	int		i;
-	char	temp;
-	char	*str;
-
-	i = 0;
-	str = malloc(sizeof(*str) * (len + 1));
-	if (!str)
-		return (NULL);
-	while (len)
-	{
-		temp = s[i];
-		str[i] = s[len - 1];
-		str[len - 1] = temp;
-		i++;
-		len--;
-	}
-	str[i] = '\0';
-	return (str);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -64,13 +44,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	int		i;
 
-	if (!*s1)
-		return (0x0);
-	start = ft_count(s1, set);
-	str = ft_strrev(s1, ft_strlen(s1));
-	end = ft_count(str, set);
-	free(str);
+	start = ft_count(s1, set, 0);
+	end = ft_count(s1, set, (ft_strlen(s1) - 1));
 	total = ft_strlen(s1) - (start + end);
+	if (!*s1 || total < 0)
+		return (0x0);
 	str = malloc(sizeof(*str) * (total + 1));
 	if (!str)
 		return (NULL);
