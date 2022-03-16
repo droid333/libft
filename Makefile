@@ -6,7 +6,7 @@
 #    By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 18:02:58 by slucas            #+#    #+#              #
-#    Updated: 2022/03/15 15:49:47 by slucas           ###   ########.fr        #
+#    Updated: 2022/03/16 19:30:33 by slucas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,10 @@ RADICAL	= atoi.c \
 		  substr.c \
 		  strjoin.c \
 		  strtrim.c \
-		  split.c
+		  split.c \
+		  itoa.c \
+		  strmapi.c \
+		  striteri.c
 
 SRC		= $(addprefix ft_, $(RADICAL))
 

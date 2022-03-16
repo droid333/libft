@@ -6,7 +6,7 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:09:18 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/15 20:31:07 by slucas           ###   ########.fr       */
+/*   Updated: 2022/03/16 20:11:40 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -421,14 +421,71 @@ int	main(void)
 /**********
  * FT_SPLIT *
  * *********/
+/*
+int	main(void)
+{
+	char	s[] = " bonjour les     gen s ";
+	char	c = ' ';
+	char	**ptr = ft_split(s, c);
+
+	// free les char* avec une while (free(tabptr[i]))
+	free(ptr);
+	return (0);
+}
+*/
+
+/**********
+ * FT_ITOA *
+ * *********/
+/*
+int	main(void)
+{
+	printf("%s\n", ft_itoa(-154435));
+	return (0);
+}
+*/
+
+/**********
+ * FT_STRMAPI *
+ * *********/
+/*
+static char	test(unsigned int i, char c)
+{
+	i *= 2;
+	c -= 32;
+	printf("%d", i);
+	printf("%c", c);
+	return (c);
+}
 
 int	main(void)
 {
-	char	s[] = "bojonjour";
-	char	c = 'j';
-	char	**ptr = ft_split(s, c);
+	char	s[] = "bonjour";
+	char	(*f)(unsigned int, char) = &test;
+	
+	printf("%s", ft_strmapi(s, f));
+	return (0);
+}
+*/
 
-	free(ptr);
+/**********
+ * FT_STRITERI *
+ * *********/
+
+static void	test(unsigned int i, char *c)
+{
+	i *= 1;
+	*c -= 32;
+	//printf("%d", i);
+	printf("%s", c);
+}
+
+int	main(void)
+{
+	char str[] = "bonjour";
+	void	(*f)(unsigned int, char*) = &test;
+	
+	ft_striteri(str, f);
 	return (0);
 }
 

@@ -6,12 +6,11 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 15:48:23 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/15 20:33:17 by slucas           ###   ########.fr       */
+/*   Updated: 2022/03/16 15:38:04 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_count(char const *s, char c)
 {
@@ -53,12 +52,12 @@ static char	*ft_dup(char const *s, int size)
 {
 	char	*dst;
 	int		i;
-	
+
 	i = 0;
 	dst = malloc(sizeof(*dst) * (size + 1));
 	if (!dst)
 		return (NULL);
-	while (s[i])
+	while (s[i] && i < size)
 	{
 		dst[i] = s[i];
 		i++;
@@ -67,45 +66,41 @@ static char	*ft_dup(char const *s, int size)
 	return (dst);
 }
 
-static char	*ft_pos(char const *s, char c, int index)
+static int	ft_match(char const *s, char c)
 {
-	char	*pos;
+	int	i;
 
-	pos = (char *)s;
-	while (pos[index])
-	{
-		if (pos[index] != c && pos[index - 1] != c)
-			return (&pos[index]);
-		index++;
-	}
-	return (0x0);
+	i = 0;
+	if (s[i] != c)
+		return (1);
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**tabptr;
-	int		count;
 	int		i;
 	int		j;
-	
-	count = 0;
-	count = ft_count(s, c);
-	tabptr = malloc(sizeof(*tabptr) * (count + 1));
+
+	tabptr = malloc(sizeof(*tabptr) * (ft_count(s, c) + 1));
+	if (!tabptr || !s)
+		return (NULL);
 	i = 0;
 	j = 0;
-	while (i < count)
+	while (i < ft_count(s, c))
 	{
 		while (s[j])
 		{
-			//if ou while
-			//tabptr[i] = ft_dup(&s[j], ft_size(&s[j], c));
-			// CA A FAIRE DANS LE DUP ?
-			tabptr[i] = ft_dup(ft_pos(s, c, j), ft_size(ft_pos(s, c, j), c));
-			printf("%s\n", tabptr[i]);
+			if (ft_match(&s[j], c))
+			{
+				tabptr[i] = ft_dup(&s[j], ft_size(&s[j], c));
+				j += ft_size(&s[j], c);
+				break ;
+			}
 			j++;
 		}
 		i++;
 	}
-	tabptr[i] = "0";
+	tabptr[i] = NULL;
 	return (tabptr);
 }
