@@ -6,7 +6,7 @@
 #    By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 18:02:58 by slucas            #+#    #+#              #
-#    Updated: 2022/03/16 19:30:33 by slucas           ###   ########.fr        #
+#    Updated: 2022/03/17 17:59:08 by slucas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,11 +41,22 @@ RADICAL	= atoi.c \
 		  split.c \
 		  itoa.c \
 		  strmapi.c \
-		  striteri.c
+		  striteri.c \
+		  putchar_fd.c \
+		  putstr_fd.c \
+		  putendl_fd.c \
+		  putnbr_fd.c
 
 SRC		= $(addprefix ft_, $(RADICAL))
 
+SRC_B	= ft_lstnew.c \
+		  ft_lstadd_front.c \
+		  ft_lstsize.c \
+		  ft_lstlast.c
+
 OBJ		= $(SRC:.c=.o)
+
+OBJ_B	= $(SRC_B:.c=.o)
 
 CC		= gcc
 
@@ -63,8 +74,11 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(AR) $@ $^
 
+bonus: $(OBJ_B)
+	$(AR) $(NAME) $^
+
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(OBJ_B)
 
 fclean: clean
 	$(RM) $(NAME)

@@ -6,14 +6,13 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:09:18 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/16 20:11:40 by slucas           ###   ########.fr       */
+/*   Updated: 2022/03/17 18:38:04 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <ctype.h>
 #include <string.h>
-#include <stdlib.h>
 #include <stdio.h>
 
 /**********
@@ -471,7 +470,7 @@ int	main(void)
 /**********
  * FT_STRITERI *
  * *********/
-
+/*
 static void	test(unsigned int i, char *c)
 {
 	i *= 1;
@@ -486,6 +485,165 @@ int	main(void)
 	void	(*f)(unsigned int, char*) = &test;
 	
 	ft_striteri(str, f);
+	return (0);
+}
+*/
+
+/**********
+ * FT_PUTCHAR_FD *
+ * *********/
+/*
+int	main(void)
+{
+	ft_putchar_fd('L', 1);
+	ft_putchar_fd('\n', 1);
+
+	return (0);
+}
+*/
+
+/**********
+ * FT_PUTSTR_FD *
+ * *********/
+/*
+int	main(void)
+{
+	ft_putstr_fd("salut", 1);
+	ft_putstr_fd("bonjour", 1);
+	ft_putchar_fd('\n', 1);
+
+	return (0);
+}
+*/
+
+/**********
+ * FT_PUTENDL_FD *
+ * *********/
+/*
+int main(void)
+{
+	ft_putendl_fd("salut", 1);
+	return (0);
+}
+*/
+
+/**********
+ * FT_PUTNBR_FD *
+ * *********/
+/*
+int main(void)
+{
+	ft_putnbr_fd(-2147483648, 1);
+	return (0);
+}
+*/
+
+/******************************************
+ ******************************************/
+
+/**********
+ * FT_LSTNEW *
+ * *********/
+/*
+int	main(void)
+{
+	t_list *list;
+	//list = NULL;
+	list = ft_lstnew("tutu");
+	
+	//while (list)
+	ft_putstr_fd(list->content, 1);
+	return (0);
+}
+*/
+
+/**********
+ * FT_LSTNEW *
+ * *********/
+/*
+int	main(void)
+{
+	t_list **lst = NULL;
+	
+	t_list *a = NULL;
+	t_list *b = NULL;
+	t_list *c = NULL;
+	t_list *d = NULL;
+	
+	lst = malloc(sizeof(*lst));
+	
+	a = ft_lstnew("0");
+	b = ft_lstnew("1");
+	c = ft_lstnew("2");
+	d = ft_lstnew("3");
+	
+	*lst = b;
+	
+	a->next = b;
+	b->next = c;
+	c->next = d;
+	d->next = NULL;
+
+	ft_lstadd_front(lst, a);
+	t_list *tmp;
+	tmp = a;
+	
+	while (tmp)
+	{
+		printf("%s\n", tmp->content);
+		tmp = tmp->next;
+	}
+	printf("\n");
+	printf("%s\n", (*lst)->content);
+	return (0);
+}
+*/
+
+/**********
+ * FT_LSTSIZE *
+ * *********/
+/*
+int	main(void)
+{
+	t_list *a = NULL;
+	t_list *b = NULL;
+	t_list *c = NULL;
+	
+	a = ft_lstnew("0");
+	b = ft_lstnew("1");
+	c = ft_lstnew("2");
+	
+	a->next = b;
+	b->next = c;
+	c->next = NULL;
+
+	printf("%d\n", ft_lstsize(a));
+	return (0);
+}
+*/
+
+/**********
+ * FT_LSTLAST *
+ * *********/
+
+int	main(void)
+{
+	t_list *a = NULL;
+	t_list *b = NULL;
+	t_list *c = NULL;
+	t_list *d = NULL;
+	
+	a = ft_lstnew("0");
+	b = ft_lstnew("1");
+	c = ft_lstnew("2");
+	d = ft_lstnew("3");
+	
+	a->next = b;
+	b->next = c;
+	c->next = d;
+	d->next = NULL;
+
+	printf("%s\n", (ft_lstlast(a)->content));
 	return (0);
 }
 
