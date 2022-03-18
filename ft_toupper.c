@@ -6,7 +6,7 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:39:05 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/09 15:45:29 by slucas           ###   ########.fr       */
+/*   Updated: 2022/03/18 15:04:44 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		c -= 32;
-	return ((unsigned char)c);
+	return (c);
 }

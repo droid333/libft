@@ -6,7 +6,7 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:55:30 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/09 16:00:04 by slucas           ###   ########.fr       */
+/*   Updated: 2022/03/18 15:05:12 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		c += 32;
-	return ((unsigned char)c);
+	return (c);
 }

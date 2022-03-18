@@ -6,7 +6,7 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:09:18 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/18 13:57:08 by slucas           ###   ########.fr       */
+/*   Updated: 2022/03/18 17:59:51 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -308,9 +308,9 @@ int	main(void)
 /*
 int	main(void)
 {
-	char	hay[] = "bonjour";
-	char	nee[] = "";
-	size_t	n = 0;
+	char	hay[] = "MZIRIBMZIRIBMZE123";
+	char	nee[] = "MZIRIBMZE";
+	size_t	n = ft_strlen(nee);
 
 	printf("la vraie::: %s\n", strnstr(hay, nee, n));
 	printf("la mienne:: %s\n", ft_strnstr(hay, nee, n));
@@ -360,8 +360,8 @@ int	main(void)
 /*
 int	main(void)
 {
-	char	*s1 = strdup("lol");
-	char	*s2 = ft_strdup("lol");
+	char	*s1 = strdup("");
+	char	*s2 = ft_strdup("");
 
 	printf("la vraie::: %s\n", s1);
 	printf("la mienne:: %s\n", s2);
@@ -378,16 +378,16 @@ int	main(void)
 /**********
  * FT_SUBSTR *
  * *********/
-/*
+
 int	main(void)
 {
-	char	*test = ft_substr("bonjour", 2, 5);
+	char	*test = ft_substr("bonjour", 7, 1);
 
-	printf("%s\n", test);
+	printf("la mienne:: %s\n", test);
 	free(test);
 	return (0);
 }
-*/
+
 
 /**********
  * FT_STRJOIN *
@@ -652,7 +652,7 @@ int	main(void)
 /**********
  * FT_LSTADD_BACK *
  * *********/
-
+/*
 int main(void)
 {
 	t_list	**lst = NULL;
@@ -690,4 +690,5 @@ int main(void)
 	printf("%p\n", a);
 	return (0);
 }
+*/
 

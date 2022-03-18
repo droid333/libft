@@ -6,7 +6,7 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 18:03:09 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/09 18:07:09 by slucas           ###   ########.fr       */
+/*   Updated: 2022/03/18 15:20:07 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	unsigned char	*t1;
+	unsigned char	*t2;
+	size_t			i;
 
+	t1 = (unsigned char *)s1;
+	t2 = (unsigned char *)s2;
 	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i] && i < (n - 1))
+	while (t1[i] && t2[i] && t1[i] == t2[i] && i < (n - 1))
 		i++;
-	return (s1[i] - s2[i]);
+	return (t1[i] - t2[i]);
 }

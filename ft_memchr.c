@@ -6,7 +6,7 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 18:37:09 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/09 19:18:22 by slucas           ###   ########.fr       */
+/*   Updated: 2022/03/18 14:58:43 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t			i;
 	unsigned char	*ptr;
 
-	i = 0;
 	ptr = (unsigned char *)s;
-	while (ptr[i] && i < n)
+	while (n--)
 	{
-		if (ptr[i] == c)
-			return (ptr + i);
-		i++;
+		if (*ptr == (unsigned char)c)
+			return (ptr);
+		ptr++;
 	}
 	return (0x0);
 }

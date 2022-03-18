@@ -6,7 +6,7 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:00:56 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/12 19:13:35 by slucas           ###   ########.fr       */
+/*   Updated: 2022/03/18 16:35:18 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,14 @@ char	*ft_strdup(const char *s1)
 	int		i;
 
 	i = 0;
-	if (*s1)
+	dst = malloc(sizeof(*dst) * (ft_strlen(s1) + 1));
+	if (!dst)
+		return (NULL);
+	while (s1[i])
 	{
-		dst = malloc(sizeof(*dst) * (ft_strlen(s1) + 1));
-		if (!dst)
-			return (NULL);
-		while (s1[i])
-		{
-			dst[i] = s1[i];
-			i++;
-		}
-		dst[i] = '\0';
-		return (dst);
+		dst[i] = s1[i];
+		i++;
 	}
-	return (0x0);
+	dst[i] = '\0';
+	return (dst);
 }
