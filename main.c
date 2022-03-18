@@ -6,7 +6,7 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:09:18 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/17 18:38:04 by slucas           ###   ########.fr       */
+/*   Updated: 2022/03/18 13:57:08 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -553,12 +553,13 @@ int	main(void)
 	
 	//while (list)
 	ft_putstr_fd(list->content, 1);
+	//free(list);
 	return (0);
 }
 */
 
 /**********
- * FT_LSTNEW *
+ * FT_LSTADD_FRONT *
  * *********/
 /*
 int	main(void)
@@ -625,7 +626,7 @@ int	main(void)
 /**********
  * FT_LSTLAST *
  * *********/
-
+/*
 int	main(void)
 {
 	t_list *a = NULL;
@@ -644,6 +645,49 @@ int	main(void)
 	d->next = NULL;
 
 	printf("%s\n", (ft_lstlast(a)->content));
+	return (0);
+}
+*/
+
+/**********
+ * FT_LSTADD_BACK *
+ * *********/
+
+int main(void)
+{
+	t_list	**lst = NULL;
+	
+	t_list	*a = NULL;
+	t_list	*b = NULL;
+	t_list	*c = NULL;
+	t_list	*d = NULL;
+
+	lst = malloc(sizeof(*lst));
+	
+	a = ft_lstnew("0");
+	b = ft_lstnew("1");
+	c = ft_lstnew("2");
+	d = ft_lstnew("3");
+	
+	*lst = b;
+
+	b->next = c;
+	c->next = d;
+	d->next = NULL;
+	a->next = NULL;
+
+	ft_lstadd_back(lst, a);
+	
+	t_list	*tmp = NULL;
+	tmp = *lst;
+	//tmp = b;
+	while (tmp)
+	{
+		printf("%s\n", tmp->content);
+		tmp = tmp->next;
+	}
+	printf("%p\n", d->next);
+	printf("%p\n", a);
 	return (0);
 }
 
