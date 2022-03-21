@@ -6,7 +6,7 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:09:18 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/18 17:59:51 by slucas           ###   ########.fr       */
+/*   Updated: 2022/03/21 15:47:25 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,8 +236,8 @@ int	main(void)
 /*
 int	main(void)
 {
-	printf("la vraie::: %s\n", strchr("salut", '\0'));
-	printf("la mienne:: %s\n", ft_strchr("salut", '\0'));
+	printf("la vraie::: %s\n", strchr("tripouille", 't' + 256));
+	printf("la mienne:: %s\n", ft_strchr("tripouille", 't' + 256));
 	return (0);
 }
 */
@@ -248,8 +248,8 @@ int	main(void)
 /*
 int	main(void)
 {
-	printf("la vraie::: %s\n", strrchr("saluat", 'u'));
-	printf("la mienne:: %s\n", ft_strrchr("saluat", 'u'));
+	printf("la vraie::: %s\n", strrchr("tripouille", 't' + 256));
+	printf("la mienne:: %s\n", ft_strrchr("tripouille", 't' + 256));
 	return (0);
 }
 */
@@ -260,9 +260,9 @@ int	main(void)
 /*
 int	main(void)
 {
-	char	s1[] = "bonjour";
-	char	s2[] = "bonjour";
-	size_t	n = 15;
+	char	s1[] = "t";
+	char	s2[] = "";
+	size_t	n = 0;
 
 	printf("la vraie::: %d\n", strncmp(s1, s2, n));
 	printf("la mienne:: %d\n", ft_strncmp(s1, s2, n));
@@ -378,16 +378,16 @@ int	main(void)
 /**********
  * FT_SUBSTR *
  * *********/
-
+/*
 int	main(void)
 {
-	char	*test = ft_substr("bonjour", 7, 1);
+	char	*test = ft_substr("bonjour", 10, 1);
 
-	printf("la mienne:: %s\n", test);
+	printf("test::: %s\n", test);
 	free(test);
 	return (0);
 }
-
+*/
 
 /**********
  * FT_STRJOIN *
@@ -395,7 +395,7 @@ int	main(void)
 /*
 int	main(void)
 {
-	char	*s = ft_strjoin("erty", "BNJFU");
+	char	*s = ft_strjoin("", "");
 
 	printf("%s\n", s);
 	free(s);
@@ -409,7 +409,7 @@ int	main(void)
 /*
 int	main(void)
 {
-	char	*str = ft_strtrim("12bon121", "1");
+	char	*str = ft_strtrim(" \t \t \n  \n\n\n\t", " \n\t");
 
 	printf("%s\n", str);
 	free(str);
@@ -439,7 +439,7 @@ int	main(void)
 /*
 int	main(void)
 {
-	printf("%s\n", ft_itoa(-154435));
+	printf("%s\n", ft_itoa(-2147483648));
 	return (0);
 }
 */
@@ -652,7 +652,7 @@ int	main(void)
 /**********
  * FT_LSTADD_BACK *
  * *********/
-/*
+
 int main(void)
 {
 	t_list	**lst = NULL;
@@ -690,5 +690,5 @@ int main(void)
 	printf("%p\n", a);
 	return (0);
 }
-*/
+
 

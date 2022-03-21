@@ -6,7 +6,7 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 17:07:59 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/18 17:32:22 by slucas           ###   ########.fr       */
+/*   Updated: 2022/03/21 15:28:49 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,20 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	s_len;
 	unsigned int	i;
 
-	s_len = 0;
 	s_len = ft_strlen(s);
-	//if (*s && start < s_len && len > 0)
-	if (*s && len > 0)
+	if (!*s || len == 0 || start >= s_len)
+		len = 0;
+	if (len > s_len)
+		len = s_len - start;
+	ptr = malloc(sizeof(*ptr) * (len + 1));
+	if (!ptr)
+		return (NULL);
+	i = 0;
+	while (s[i] && len--)
 	{
-		ptr = malloc(sizeof(*ptr) * (len + 1));
-		if (!ptr)
-			return (NULL);
-		if (start >= s_len)
-		{
-			ptr[0] = '\0';
-			return (ptr);
-		}
-		i = 0;
-		while (s[i] && len--)
-		{
-			ptr[i] = s[i + start];
-			i++;
-		}
-		ptr[i] = '\0';
-		return (ptr);
+		ptr[i] = s[i + start];
+		i++;
 	}
-	return (0x0);
+	ptr[i] = '\0';
+	return (ptr);
 }
