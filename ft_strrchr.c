@@ -6,7 +6,7 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:18:52 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/21 14:24:08 by slucas           ###   ########.fr       */
+/*   Updated: 2022/04/09 01:56:44 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
-	i = 0;
 	i = ft_strlen(s);
 	while (i >= 0)
 	{

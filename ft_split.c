@@ -6,7 +6,7 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 15:48:23 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/16 15:38:04 by slucas           ###   ########.fr       */
+/*   Updated: 2022/04/09 01:44:54 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,11 @@ static int	ft_count(char const *s, char c)
 static int	ft_size(char const *s, char c)
 {
 	int	i;
-	int	size;
 
 	i = 0;
-	size = 0;
 	while (s[i] && s[i] != c)
-	{
-		size++;
 		i++;
-	}
-	return (size);
+	return (i);
 }
 
 static char	*ft_dup(char const *s, int size)
@@ -66,16 +61,6 @@ static char	*ft_dup(char const *s, int size)
 	return (dst);
 }
 
-static int	ft_match(char const *s, char c)
-{
-	int	i;
-
-	i = 0;
-	if (s[i] != c)
-		return (1);
-	return (0);
-}
-
 char	**ft_split(char const *s, char c)
 {
 	char	**tabptr;
@@ -91,7 +76,7 @@ char	**ft_split(char const *s, char c)
 	{
 		while (s[j])
 		{
-			if (ft_match(&s[j], c))
+			if (s[j] != c)
 			{
 				tabptr[i] = ft_dup(&s[j], ft_size(&s[j], c));
 				j += ft_size(&s[j], c);

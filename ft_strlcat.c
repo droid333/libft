@@ -6,7 +6,7 @@
 /*   By: slucas <slucas@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 20:12:14 by slucas            #+#    #+#             */
-/*   Updated: 2022/03/09 15:26:28 by slucas           ###   ########.fr       */
+/*   Updated: 2022/04/09 01:55:15 by slucas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	j;
 	size_t	k;
 
-	i = 0;
-	j = 0;
-	k = 0;
 	i = ft_strlen(dst);
 	j = ft_strlen(src);
 	if (dstsize <= i)
